@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Favorite Person</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #4b101e;
+    color: #fff8f5;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+    padding: 55px 22px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.top-label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #e8bfc7;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 8vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+h1 span {
+    color: #eabac5;
+    font-style: italic;
+}
+
+.intro {
+    color: #e9cbd0;
+    font-size: 13px;
+    line-height: 2;
+    max-width: 450px;
+    margin: 0 auto 35px;
+}
+
+.envelope {
+    background: #fff8f5;
+    color: #591626;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 38px 25px;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px #21050c55;
+}
+
+.envelope h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.envelope p {
+    color: #89616b;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #671b2e;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 3px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #8b3048;
+    transform: translateY(-3px);
+}
+
+.letter {
+    display: none;
+    background: #fffaf7;
+    color: #54202d;
+    text-align: left;
+    padding: clamp(25px, 6vw, 48px);
+    margin: 35px auto;
+    border-radius: 5px;
+    box-shadow: 0 15px 50px #21050c66;
+    animation: appear .8s ease;
+}
+
+.letter.show {
+    display: block;
+}
+
+.letter-label {
+    text-align: center;
+    color: #a16b78;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.letter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.letter-content {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 2.15;
+    color: #633a45;
+    white-space: pre-line;
+    text-align: justify;
+}
+
+.signature {
+    margin-top: 35px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 23px;
+    text-align: right;
+    color: #782c40;
+}
+
+.footer {
+    margin-top: 50px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #d9aab5;
+}
+
+.floating {
+    position: fixed;
+    bottom: -30px;
+    color: #e8b6c2;
+    opacity: .35;
+    pointer-events: none;
+    animation: floatUp 9s linear forwards;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 500px) {
+    .container {
+        padding: 45px 17px;
+    }
+    .letter-content {
+        font-size: 12px;
+        line-height: 2;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top-label">A LITTLE SOMETHING FOR YOU</div>
+
+    <h1>For my <span>favorite</span><br>person.</h1>
+
+    <p class="intro">
+        I know today wasn't easy.
+        So I made a little something for you.
+        Take a deep breath, relax, and read this slowly.
+    </p>
+
+    <div class="envelope">
+        <h2>Open when you need a hug</h2>
+        <p>
+            A little reminder that you're loved,
+            appreciated, and never alone.
+        </p>
+        <button onclick="openLetter()">OPEN YOUR LETTER</button>
+    </div>
+
+    <div class="letter" id="letter">
+
+        <div class="letter-label">SURAT CINTAKU UNTUK PACAR NTIKKU YANG HEBAT SEKALI</div>
+
+        <h2>hai pacar kerenkuu.</h2>
+
+        <div class="letter-content">cantiknya aku, i know today hasn't been the easiest day for you. mungkin hari ini banyak hal yang bikin kamu capek, kesel, bahkan overwhelmed kasian sekali pacarku. but i just want you to know that you've done so well today. kamu sudah hebat banget jalaninnya and i'm really proud of you. maafin ya hal hal yang bikin kamu kesel hari ini, jangan terlalu dipikirin sampai bikin kamu capek sendiri. you deserve to have good days too and it's okay kalau hari ini nggak berjalan sesuai yang kamu harapkan. you don't always have to be strong or pretend that everything is fine. it's okay to feel tired, it's okay to have a bad day, and it's okay to take a break. you don't have to figure everything out right now, just take your time and be a little kinder to yourself.
+
+and you know what ntikk? aku bangga banget sama kamu hari ini. di tengah kesibukan kamu, kamu masih sempat bantu bunda, anter dan suapin adik kamu tadi sambil kelas zoom, bahkan masih beres beres juga. you're such a good person, sayang. kamu mungkin nganggep itu hal biasa but i hope you know how much those little things mean. hebat sekali pacarkuu, i'm so proud of you. semoga hal hal baik segera datang ke kamu, termasuk semoga kamu segera dapet hadiah HP baru itu ya sayangku. i really hope tomorrow treats you better, semoga besok lebih ringan dan nggak banyak hal yang bikin kamu pusing. for now, istirahat yang cukup ya, jangan lupa buka puasa dengan hal yang kamu suka dan jangan terlalu banyak mikirin hal yang bikin kamu sedih. kalau ada apa apa, you can always talk to me. you don't have to go through everything alone. i wish i could make your bad days a little better. i love you so much, and i'm always rooting for you. i love you always, ntik..</div>
+
+        <div class="signature">
+            With all my love.
+        </div>
+
+    </div>
+
+    <div class="footer">
+        HOI AKU CINTA KAMU CIL, SERIUSAN
+    </div>
+
+</div>
+
+<script>
+function openLetter() {
+    const letter = document.getElementById("letter");
+    letter.classList.add("show");
+
+    setTimeout(() => {
+        letter.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }, 150);
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating";
+    heart.innerHTML = Math.random() > 0.5 ? "♥" : "♡";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (14 + Math.random() * 18) + "px";
+    heart.style.animationDuration = (6 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 11000);
+}
+
+setInterval(createHeart, 900);
+</script>
+
+</body>
+</html>
